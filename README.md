@@ -31,6 +31,14 @@ cd path\to\DetectionService
 poetry install
 ```
 
+If you encounter an error about the current project not being installable, use:
+
+```powershell
+poetry install --no-root
+```
+
+**Note:** This project is configured with `package-mode = false` in `pyproject.toml`, which means it's treated as an application rather than a library. This prevents Poetry from trying to install the current project as a package and only installs the dependencies. The `--no-root` flag explicitly tells Poetry not to install the root package if needed.
+
 ## Running the Service
 
 1. Start the service using Poetry
